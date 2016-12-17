@@ -92,12 +92,6 @@ rank_ab <- rankEN(msObj      = filter_out,
                   region_bio = paste0("VO_", 17:21),
                   lambda     = 0.001)
 
-rank_ef <- rankEN(msObj      = filter_out,
-                  bioact     = bioact$ef,
-                  region_ms  = paste0("VO_", 17:21),
-                  region_bio = paste0("VO_", 17:21),
-                  lambda     = 0.001)
-
 rank_pa <- rankEN(msObj      = filter_out,
                   bioact     = bioact$pa,
                   region_ms  = paste0("VO_", 18:21),
@@ -128,7 +122,7 @@ find_cyO2_rank <- function(rankEN_obj) {
 }
 
 # List the ranks for cyO2
-lapply(list(ab=rank_ab, bc=rank_bc, ec=rank_ec, ef=rank_ef,
-            fg=rank_fg, oc=rank_oc, pa=rank_pa, pc=rank_pc),
+lapply(list(ab=rank_ab, bc=rank_bc, ec=rank_ec, fg=rank_fg,
+            oc=rank_oc, pa=rank_pa, pc=rank_pc),
        find_cyO2_rank)
 
